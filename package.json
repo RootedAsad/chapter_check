@@ -1,0 +1,18 @@
+{
+  "name": "chaptercheck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ChapterCheck: readability analysis for English chapters (React + Express)",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "sync": "node scripts/sync-analysis.mjs",
+    "sync:check": "node scripts/sync-analysis.mjs --check",
+    "test": "npm run sync:check && npm --prefix server test && npm --prefix client test",
+    "build": "npm --prefix client run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

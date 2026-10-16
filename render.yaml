@@ -1,0 +1,15 @@
+# Render Blueprint for the API. Create via Dashboard > New > Blueprint, or enter the same values manually.
+services:
+  - type: web
+    name: chaptercheck-api
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        sync: false # set to your Vercel URL, e.g. https://chaptercheck.vercel.app
